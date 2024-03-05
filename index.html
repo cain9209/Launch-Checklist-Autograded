@@ -38,21 +38,13 @@
                         alert("Shuttle not ready for launch");
                             launchStatus.style.color = 'red';
                             launchStatus.style.display = 'visible';
-                        } else  (fuelLevel.innerHTML.trim() > 10000){
-                        alert("Suttle not ready for launch")
-                            faultyitems.style.display = 'visible';
-                            faultyitems.style.display = 'red';
-                        
+                        } else if  (fuelLevel.innerHTML.trim() > 10000) {
+                              alert("Suttle not ready for launch")
+                              faultyitems.style.display = 'visible';
+                              faultyitems.style.display = 'red';
+                        } else {
+                            alert("Shuttle is ready for launch")
                         }
-
-                    const launchStatus = document.getElementById('launchStatus');
-                    if(launchStatus.innerHTML.trim() >= 10000){
-                        alert("Not enough fuel to complete Journey!")
-                        launchStatus.style.display = 'visible'+'red';
-                    } else {
-
-                    }
-
                     </script>
                 <ol>
                     <li id= "pilotStatus" data-testid="pilotStatus">(`Pilot ${pilotName} Ready`)</li>
