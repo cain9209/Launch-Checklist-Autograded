@@ -17,13 +17,27 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     */
  }
  
- function validateInput(testInput) {
-    
- }
+ function validateInput(testInput) {if (testInput === "")
+ {
+    return("Empty")
+ }    else if (testInput === isNaN(value)) {
+    return  "Not a Numberr";
+ }   else if (testInput !== isNaN(value))
+    return "Is a Number"
+ }   
  
- function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    
- }
+ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) 
+    {
+    if (document, list, pilot, copilot, fuelLevel, cargoLevel === isNaN(value)){
+        return('Not a Number')
+    } else if (document, list, pilot, copilot, fuelLevel, cargoLevel !== isNaN(value)){
+        return('input is a Number')
+    } else {
+        return('Pleasse submit a valid responce')
+    }
+    };
+ 
+ 
  
  async function myFetch() {
      let planetsReturned;
