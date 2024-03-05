@@ -32,6 +32,28 @@
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
             <div id="faultyItems" style="visibility: hidden">
+                <script>
+                    const fuelLevel = document.getElementsByName('fuelLevel');
+                    if(fuelLevel.innerHTML.trim() < 10000){
+                        alert("Shuttle not ready for launch");
+                            launchStatus.style.color = 'red';
+                            launchStatus.style.display = 'visible';
+                        } else  (fuelLevel.innerHTML.trim() > 10000){
+                        alert("Suttle not ready for launch")
+                            faultyitems.style.display = 'visible';
+                            faultyitems.style.display = 'red';
+                        
+                        }
+
+                    const launchStatus = document.getElementById('launchStatus');
+                    if(launchStatus.innerHTML.trim() >= 10000){
+                        alert("Not enough fuel to complete Journey!")
+                        launchStatus.style.display = 'visible'+'red';
+                    } else {
+
+                    }
+
+                    </script>
                 <ol>
                     <li id= "pilotStatus" data-testid="pilotStatus">(`Pilot ${pilotName} Ready`)</li>
                     <li id="copilotStatus" data-testid="copilotStatus">(`Co-pilot ${copilotName}`) Ready</li>
