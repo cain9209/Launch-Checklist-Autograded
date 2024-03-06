@@ -33,22 +33,35 @@
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
             <div id="faultyItems" style="visibility: hidden">
                 <script>
-                    const fuelLevel = document.getElementsByName('fuelLevel');
-                    if(fuelLevel.innerHTML.trim() < 10000){
-                        alert("Shuttle not ready for launch");
-                            launchStatus.style.color = 'red';
-                            launchStatus.style.display = 'visible';
-                        } else if  (fuelLevel.innerHTML.trim() > 10000) {
-                              alert("Suttle not ready for launch")
-                              faultyitems.style.display = 'visible';
-                              faultyitems.style.display = 'red';
-                        } else {
-                            alert("Shuttle is ready for launch")
+                    function checkShuttleStatus(){
+                        
+                        document.getElementById('pilotStatus').textContent = `Pilot status: ${pilotName}`
+                        document.getElementById('copilotStatus').textContent = `Co-Pilot status: ${copilotName}`
+
+
+                        if(fuelLevel < 10000) {
+                        document.getElementById('faultyItems').style.display = 'block';
+                        document.getElementById('fuelStatus').textContent = 'Fuel Status: Not enough fuel for the launch';
+                        document.getElementById('launchStatus').textContent = "Shuttle not ready for launch";               
+                        document.getElementById('launchStatus').style.color = 'red';
+                        return;
+                        } else 
+                         document.getElementById('launchStatus').textContent = 'Shuttle ready for Launch'
+                         document.getElementById('launchStatus').style.color = 'green';
+
                         }
+
+                        if(cargoMass > 10000 ){
+                        document.getElementById('faultyItems').style.display = 'block'
+                        document.getElementById('cargoStatus').textContent = 'To much mass for the shuttle to launch'
+                        document.getElementById('launchStatus').textContent = 'Shuttle not ready for Launch'
+                        document.getElemntById('launchStatus').style.color = 'red'
+                        }
+                        checkShuttleStatus();
                     </script>
                 <ol>
-                    <li id= "pilotStatus" data-testid="pilotStatus">(`Pilot ${pilotName} Ready`)</li>
-                    <li id="copilotStatus" data-testid="copilotStatus">(`Co-pilot ${copilotName}`) Ready</li>
+                    <li id= "pilotStatus" data-testid="pilotStatus">`Pilot ${pilotName} Ready`</li>
+                    <li id="copilotStatus" data-testid="copilotStatus">`Co-pilot ${copilotName}` Ready</li>
                     <li id="fuelStatus" data-testid="fuelStatus">Fuel level high enough for launch</li>
                     <li id="cargoStatus" data-testid="cargoStatus">Cargo mass low enough for launch</li>
                 </ol>
