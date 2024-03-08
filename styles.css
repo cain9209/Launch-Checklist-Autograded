@@ -48,3 +48,13 @@ button {
    height: 30px;
    margin: 10px 0;
 }
+
+#resetButton {
+   background-color: #e7531d;
+   border: none;
+   color: white;
+   border-radius: 8px;
+   width: 25%;
+   height: 30px;
+   margin: 10px 0;
+}
