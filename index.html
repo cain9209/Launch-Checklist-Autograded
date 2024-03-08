@@ -15,22 +15,9 @@
             let copilotNameInput = document.querySelector('input[name=copilotName]');
             let fuelLevelInput = document.querySelector('input[name=fuelLevel]');
             let cargoMassInput = document.querySelector('input[name=cargoMass]');
-                if(fuelLevelInput.value < 10000){
-                    document.getElementById('faultyItems').style.display = 'block';
-                    document.getElementById('fuelStatus').innerHTML = alert('Not enough fuel for the Journey');
-                    document.getElementById('launchStatus').innerHTML = alert('Shuttle not ready for launch');
-                    document.getElementById('launchStatus').style.color = 'red';
-                } else if (cargoMassInput.value > 10000) {
-                    document.getElementById('faultyItems').style.display = 'block';
-                    document.getElementById('fuelStatus').innerHTML = alert('To much mass for the shuttle to take off');
-                    document.getElementById('launchStatus').innerHTML = alert('Shuttle not ready for launch');
-                    document.getElementById('launchStatus').style.color = 'red';
-                } else {
-                    document.getElementById('lanchStatus').innerHTML = alert('Shuttle is ready for launch');
-                    document.getElementById('launchStatus').style.color = 'green';
-                }
             });
         });
+        
     </script>
     <body>
         <h1>Launch Checklist Form</h1>
@@ -64,7 +51,7 @@
         </div>
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
-            <div id="faultyItems" style="visibility: hidden">
+            <div id="faultyItems" style="visibility: hidden;">
                 <ol>
                     <li id= "pilotStatus" data-testid="pilotStatus">Pilot Ready</li>
                     <li id="copilotStatus" data-testid="copilotStatus">Co-pilot Ready</li>
