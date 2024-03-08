@@ -32,27 +32,28 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  
   if(fuelLevel < 10000){
       document.getElementById('faultyItems').style = 'visibility: block;'
-      document.getElementById('fuelStatus').textContent = 'Not enough fuel for the Journey';
+      document.getElementById('fuelStatus').textContent = 'Fuel level too low for launch';
       document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
       document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
       document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
       document.getElementById('launchStatus').style.color = 'red';
   } else if (cargoLevel > 10000) {
       document.getElementById('faultyItems').style = 'visibility: block;'
-      document.getElementById('cargoStatus').textContent = 'To much mass for the shuttle to take off';
-      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
+      document.getElementById('cargoStatus').textContent = ' Cargo mass too heavy for launch';
       document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
       document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
       document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
+      document.getElementById('fuelStatus').textContent('Fuel level high enough for launch');
       document.getElementById('launchStatus').style.color = 'red';
-  } else {
+  } else if (fuelLevel === 10000 && cargoLevel <= 10000) {
       document.getElementById('launchStatus').textContent = 'Shuttle is Ready for Launch';
-      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
       document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
       document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
+      document.getElementById('fuelStatus').textContent('Fuel level high enough for launch');
       document.getElementById('launchStatus').style.color = 'green';
-      
-}
+  } else {
+    alert('Please complete form to verify saftey!')
+  }
 
 };
  
