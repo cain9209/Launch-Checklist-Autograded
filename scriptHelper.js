@@ -29,18 +29,27 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   // validateInput //
+ 
   if(fuelLevel < 10000){
-      list.document.getElementById('faultyItems').style.display = 'block';
+      document.getElementById('faultyItems').style = 'visibility: block;'
       document.getElementById('fuelStatus').textContent = 'Not enough fuel for the Journey';
-      document.getElementById('launchStatus').textContent = 'Shuttle not ready for launch';
+      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
+      document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
+      document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
       document.getElementById('launchStatus').style.color = 'red';
   } else if (cargoLevel > 10000) {
-      list.document.getElementById('faultyItems').style.display = 'block';
-      document.getElementById('cargoStatus').textContent = alert('To much mass for the shuttle to take off');
-      document.getElementById('launchStatus').textContent = alert('Shuttle not ready for launch');
+      document.getElementById('faultyItems').style = 'visibility: block;'
+      document.getElementById('cargoStatus').textContent = 'To much mass for the shuttle to take off';
+      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
+      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
+      document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
+      document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
       document.getElementById('launchStatus').style.color = 'red';
   } else {
-      document.getElementById('lanchStatus').textContent = alert('Shuttle is ready for launch');
+      document.getElementById('launchStatus').textContent = 'Shuttle is Ready for Launch';
+      document.getElementById('launchStatus').textContent = 'Shuttle Not Ready for Launch';
+      document.getElementById('pilotStatus').textContent = 'Pilot Chris is ready for launch';
+      document.getElementById('copilotStatus').textContent = 'Co-pilot Bob is ready for launch';
       document.getElementById('launchStatus').style.color = 'green';
       
 }
