@@ -58,9 +58,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
  function pickPlanet(planets) { // this was changed //
-  let planet = {};
-for(planet of planets)
-return planet.planets.
+ 
  }
  
  module.exports.addDestinationInfo = addDestinationInfo;
