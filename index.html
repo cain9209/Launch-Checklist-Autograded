@@ -7,18 +7,6 @@
         <script src = "script.js"></script>
         <script src = "bundle.js"></script>
     </head>
-    <script>
-        window.addEventListener('load', function() {
-            let form = document.querySelector('form');
-            form.addEventListener('submit', function(event) {
-            let pilotNameInput = document.querySelector('input[name=pilotName]');
-            let copilotNameInput = document.querySelector('input[name=copilotName]');
-            let fuelLevelInput = document.querySelector('input[name=fuelLevel]');
-            let cargoMassInput = document.querySelector('input[name=cargoMass]');
-            });
-        });
-        
-    </script>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget" data-testid="missionTarget">
@@ -27,34 +15,25 @@
         <div id="launchForm">
             <form data-testid="testForm">
                 <div class="formField">
-                    <label>Pilot Name <input type="text" name="pilotName" id="pilotName" minlength="5" maxlength="15" required/></label>
+                    <label>Pilot Name <input type="text" name="pilotName" id="pilotName"/></label>
                 </div>
                 <div class="formField">
-                    <label>Co-pilot Name <input type="text" name="copilotName" minlength="5" maxlength="15" required/></label>
+                    <label>Co-pilot Name <input type="text" name="copilotName"/></label>
                 </div>
                 <div class="formField">
-                    <label>Fuel Level (L) <input type="text" name="fuelLevel" minlength="4" maxlength="10" required/></label> 
+                    <label>Fuel Level (L) <input type="text" name="fuelLevel"/></label> 
                 </div>
                 <div class="formField">
-                    <label>Cargo Mass (kg) <input type="text" name="cargoMass" minlength="4" maxlength="10" required/></label>
+                    <label>Cargo Mass (kg) <input type="text" name="cargoMass"/></label>
                 </div>
                 <button id="formSubmit">Submit</button>
-                <input id="resetButton" type="reset"><br>
-                <script>
-                    let button = document.getElementById('formSubmit');
-                    button.addEventListener('click', function() {
-                        let input = document.getElementById('launchForm');
-                        console.log(input)
-                    });
-                </script>
-                
             </form>
         </div>
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
-            <div id="faultyItems" style="visibility: hidden;">
+            <div id="faultyItems" style="visibility: hidden">
                 <ol>
-                    <li id= "pilotStatus" data-testid="pilotStatus">Pilot Ready</li>
+                    <li id="pilotStatus" data-testid="pilotStatus">Pilot Ready</li>
                     <li id="copilotStatus" data-testid="copilotStatus">Co-pilot Ready</li>
                     <li id="fuelStatus" data-testid="fuelStatus">Fuel level high enough for launch</li>
                     <li id="cargoStatus" data-testid="cargoStatus">Cargo mass low enough for launch</li>
