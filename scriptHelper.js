@@ -4,21 +4,21 @@ require('cross-fetch/polyfill');
 
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-
-// const destinationInfo = `
+        const div =  document.getElementById('missionTarget');
+        div.innerHTML = `
     
-//                 //  <h2>Mission Destination</h2>
-//                 //  <ol>
-//                 //      <li>Name: ${document.name} </li>
-//                 //      <li>Diameter: ${document.diameter} </li>
-//                 //      <li>Star: ${document.star}</li>
-//                 //      <li>Distance from Earth: ${document.distance} </li>
-//                 //      <li>Number of Moons: ${document.moons} </li>
-//                 //  </ol>
-//                 //  <img src="${document.imageUrl}">
-    
-//  `
-}
+                 <h2>Mission Destination</h2>
+                 <ol>
+                     <li>Name: ${name} </li>
+                     <li>Diameter: ${diameter} </li>
+                     <li>Star: ${star}</li>
+                     <li>Distance from Earth: ${distance} </li>
+                     <li>Number of Moons: ${moons} </li>
+                 </ol>
+                 <img src="${imageUrl}"> 
+                 `;
+        }
+     
  
  // Validating end user information with a cross reference to data format //
  function validateInput(input) {
@@ -62,15 +62,16 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 };
  
- 
  async function myFetch() {
-     let planetsReturned;
- 
-     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json)").then( function(response) {
-         });
- 
-     return planetsReturned;
- }
+  let planetsReturned;
+
+  planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
+      });
+
+  return planetsReturned;
+}
+
+myFetch();
  // Function is completed, end user is able to call Random Planetary data //
  function pickPlanet(planets) { 
   const randomIndex = Math.floor(Math.random() * planets.length);
