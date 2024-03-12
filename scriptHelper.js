@@ -30,7 +30,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
       return("Is a Number");
     }
   };
- // Added validation to return safety protocol for end user //
+ // add event listner and event prevent //
 
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  
@@ -62,12 +62,18 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 };
  
- async function myFetch() {
+async function myFetch() {
   let planetsReturned;
 
-  planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
-      });
+  const response = await fetch('https://handlers.education.launchcode.org/static/planets.json');
+  if (response.ok) {
 
+    planetsReturned = await response.json();
+    console.log(JSON.stringify(planetsReturned,null,2))
+  } else {
+    console.error("Failed to fetch planets", response.status, response.statusText);
+  }
+    
   return planetsReturned;
 }
 
