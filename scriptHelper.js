@@ -54,6 +54,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   copilostStatus.innerHTML = `Co-pilot ${copilot + ''} is ready for launch`
 
   if (fuelLevel >= 10000 && cargoLevel <= 10000) {
+    faultyItems.style.visibility = 'visible'
     launchStatus.innerHTML = 'Shuttle is Ready for Launch';
     launchStatus.style.color = 'green'
   }
