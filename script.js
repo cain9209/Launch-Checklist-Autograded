@@ -20,12 +20,15 @@ window.addEventListener("load", function () {
 
     document.addEventListener("submit", function (event) {
         event.preventDefault();
-        formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass)
 
-        const faultyItems = document.querySelector('faultyItems')
-        const pilotName = document.querySelector('input[name=pilot]').value
-        const copilotName = document.querySelector('input[name=copilot]').value
+        const faultyItems = document.querySelector('#faultyItems').value
+        const pilotName = document.querySelector('input[name=pilot]')
+        const copilotName = document.querySelector('input[name=copilot]')
         const fuelLevel = Number(document.querySelector('input[name=fuelLevel]').value)
         const cargoMass = Number(document.querySelector('input[name=cargoMass]').value)
+
+        formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass)
+
     });
 });
+
