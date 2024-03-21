@@ -42,13 +42,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
   let validatedFuel = validateInput(fuelLevel)
   let validateCargo = validateInput(cargoMass)
-
-  if (pilot === ' ' || copilot === '' || fuelLevel === '' || cargoMass === '') {
-    // alert("Please enter a valid responce")
+// first alert is working correctly for the code //
+  if (pilot === '' || copilot === '' || fuelLevel === '' || cargoMass === '') {
+    window.alert("Please enter a valid responce")
   }
 
-  if (validatedFuel === 'Not a Number' || validateCargo === 'Not a Number') {
-    // alert('Please enter a valid responce')
+  if (isNaN(Number(fuelLevel)) && isNaN(Number(cargoMass))) {
+    window.alert('Please enter a valid response num');
   }
   pilotStatus.innerHTML = `Pilot ${pilot + ''} is ready for launch`
   copilostStatus.innerHTML = `Co-pilot ${copilot + ''} is ready for launch`
